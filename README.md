@@ -129,12 +129,12 @@ def prdict_heart_disease(list_data):
     dataframe = str(df.head())
     return (nn_model.score(X_test, y_test) * 100),(pred)
 ```
-###Contribution Guidelines:
+Contribution Guidelines:
 <p>
 We welcome contributions to improve the Heart Disease Prediction System! If you're interested in fixing bugs, adding new features, or improving     documentation, follow the steps below:
 </p>
 
-##How to Contribute
+How to Contribute
 <p>
 1. Fork the Repository
 
