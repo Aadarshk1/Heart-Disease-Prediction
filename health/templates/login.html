@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<!-- JavaScript Alert and Redirection -->
+{% if error == "pat1" %}
+<script>
+    alert('Logged in successfully');
+    window.location = "{% url 'patient_home' %}";
+</script>
+{% elif error == "notmember" %}
+<script>
+    alert('Your information verification is pending. Please login again after some time.');
+    window.location = "{% url 'logout' %}";
+</script>
+{% elif error == "pat2" %}
+<script>
+    alert('Logged in successfully');
+    window.location = "{% url 'doctor_home' %}";
+</script>
+{% elif error == "not" %}
+<script>
+    alert('Username & Password do not match.');
+</script>
+{% endif %}
+
+<!-- Login Section -->
+<section class="logins py-5">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="title-section mb-md-5 mb-4">
+            <center>
+                <h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Login</h3>
+            </center>
+        </div>
+        <hr/>
+
+        <div class="login px-sm-4 mx-auto mw-100 login-wrapper">
+            <form class="login-wrapper" action="" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="uname" placeholder="Enter Username" required>
+                    <small id="emailHelp" class="form-text text-muted">We’ll never share your details with anyone else.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="pwd" placeholder="Enter Your Password" required>
+                </div>
+
+                <button type="submit" class="btn submit mt-4" style="background-color: #605d5d;">Login</button>
+
+                <p class="text-center mt-5">
+                    <a href="{% url 'signup' %}">Don't have an Account? <span style="color: #61bbb9; font-weight: bolder;">Register here</span></a>
+                </p>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- //login -->
+
+{% endblock %}

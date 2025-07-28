@@ -1,0 +1,76 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+<!-- Update Success Alert -->
+{% if terror == "create" %}
+<script>
+    alert('Detail Updated Successfully');
+    window.location.href = "{% url 'profile_doctor' %}";
+</script>
+{% endif %}
+
+<section class="logins py-5">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="title-section mb-md-5 mb-4">
+            <h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Update My Detail</h3>
+        </div>
+        <hr />
+        <div class="login px-sm-12" style="width:100%">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" class="form-control" name="fname" value="{{ doc.user.first_name|default:'' }}" placeholder="First Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" class="form-control" name="lname" value="{{ doc.user.last_name|default:'' }}" placeholder="Last Name" required>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" name="email" value="{{ doc.user.email|default:'' }}" placeholder="Enter Email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="contact">Contact</label>
+                        <input type="text" id="contact" class="form-control" name="contact" value="{{ doc.contact|default:'' }}" placeholder="Enter Contact" required>
+                    </div>
+                </div>
+
+                {% if error != "pat" %}
+                <div class="form-group row">
+                    <div class="col-md-12">
+                        <label for="type">Specialist</label>
+                        <input type="text" id="type" class="form-control" name="type" value="{{ doc.category|default:'' }}">
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label for="add">City</label>
+                        <input type="text" id="add" class="form-control" name="add" value="{{ doc.address|default:'' }}" placeholder="Enter Address" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="image">Image</label>
+                        <input type="file" id="image" class="form-control" name="image">
+                    </div>
+                    <div class="col-md-2">
+                        {% if doc.image %}
+                            <img src="{{ doc.image.url }}" alt="Current Image" style="width:100%; height:150px; object-fit:cover;">
+                        {% else %}
+                            <p>No image uploaded</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <button type="submit" class="btn submit mt-4" style="background-color: #726f6e;">Update Detail</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+    <!-- Conditional Alerts for Error Handling -->
+    {% if error == "pat1" %}
+        <script>
+            alert('Logged in successfully');
+            window.location = "{% url 'admin_home' %}";
+        </script>
+    {% elif error == "notmember" %}
+        <script>
+            alert('Your information is pending. Please update your profile first, then continue with this service.');
+            window.location = "{% url 'service_home' %}";
+        </script>
+    {% elif error == "pat2" %}
+        <script>
+            alert('Logged in successfully');
+            window.location = "{% url 'admin_home' %}";
+        </script>
+    {% elif error == "not" %}
+        <script>
+            alert('Username and Password do not match');
+        </script>
+    {% endif %}
+
+    <!-- Login Section -->
+    <section class="logins py-5">
+        <div class="container py-xl-5 py-lg-3">
+            <!-- Title Section -->
+            <div class="title-section mb-md-5 mb-4">
+                <h6 class="w3ls-title-sub"></h6>
+                <br><br>
+                <center>
+                    <h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Login</h3>
+                </center>
+            </div>
+            <hr/>
+
+            <!-- Login Form -->
+            <div class="login px-sm-4 mx-auto mw-100 login-wrapper">
+                <form class="login-wrapper" action="" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class="form-control" name="uname" placeholder="Enter Username" required>
+                        <small id="emailHelp" class="form-text text-muted">Your privacy is our priority.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" name="pwd" placeholder="Enter Your Password" required>
+                    </div>
+                    <center>
+                        <button type="submit" class="btn submit mt-4" style="background: #6a6b6c;">Login</button>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
