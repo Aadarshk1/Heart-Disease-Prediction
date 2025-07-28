@@ -130,44 +130,49 @@ def prdict_heart_disease(list_data):
     return (nn_model.score(X_test, y_test) * 100),(pred)
 ```
 🤝Contribution Guidelines
-We welcome contributions to improve the Heart Disease Prediction System! If you're interested in fixing bugs, adding new features, or improving documentation, follow the steps below:
-
+<p>
+We welcome contributions to improve the Heart Disease Prediction System! If you're interested in fixing bugs, adding new features, or improving     documentation, follow the steps below:
+</p>
 🛠️ How to Contribute
 1. Fork the Repository
 
-Click the Fork button at the top right of the repository page to create your own copy.
+	Click the Fork button at the top right of the repository page to create your own copy.
 
 2. Clone Your Fork Locally
 
-bash
+```bash
 git clone https://github.com/Aadarshk1/Heart-Disease-Prediction-System.git
 cd Heart-Disease-Prediction-System
+```
 
 3. Create a Branch
 
 Create a new branch for your feature or fix:
 
-bash
+```bash
 git checkout -b feature/your-feature-name
+```
 
 4. Make Your Changes
 
-Add new features or fix bugs
+	Add new features or fix bugs
 
-Write clean, readable, and documented code
+	Write clean, readable, and documented code
 
-Test your changes thoroughly
+	Test your changes thoroughly
 
 5. Commit Your Changes
 
-bash
+```bash
 git add .
 git commit -m "Add: Brief description of your change"
+```
 
 6. Push to Your Fork
 
-bash
+```bash
 git push origin feature/your-feature-name
+```
 
 7. Open a Pull Request
 
