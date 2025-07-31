@@ -195,8 +195,6 @@ def prdict_heart_disease(list_data):
     model = joblib.load('heart_model.pkl')
     pred = nn_model.predict([list_data])
     accuracy = nn_model.score(X_test, y_test) * 100  # this could be pre-saved too
-    print("X_test ",X_test)
-    print("y_test ",y_test)
     print("Neural Network Accuracy: {:.2f}%".format(nn_model.score(X_test, y_test) * 100))
     print("Prdicted Value is : ", format(pred))
     dataframe = str(df.head())
