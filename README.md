@@ -80,7 +80,7 @@ the system and what all are the diseases predicted by the system.*
   - ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
   - ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
 - Database:
-  - The system is integrated with MySQL for robust, production-level database operations
+  - The system is integrated with SQLite for robust, production-level database operations
 - #### Data-Set for training:
   - <a href="https://github.com/Kumar-laxmi/Heart-Disease-Prediction-System/blob/main/Machine_Learning/heart.csv">Click here for DATA-SET</a>
 - #### IDE:
